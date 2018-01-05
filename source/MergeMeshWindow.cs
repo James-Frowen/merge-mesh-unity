@@ -101,7 +101,7 @@ namespace MergeMeshUnity
             }
         }
 
-        [MenuItem("Tools Merge Mesh Window")]
+        [MenuItem("Window/Mesh Tools/Merge and Export Mesh")]
         public static void ShowWindow()
         {
             var window = (MergeMeshWindow)GetWindow(typeof(MergeMeshWindow));

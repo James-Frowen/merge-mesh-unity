@@ -37,3 +37,7 @@ To export the Mesh as an `.obj` file select the `GameObject` in the scene and pr
 Once the object has been exported it can be used by other 3d viewer and editors.
 
 ![exported mesh being opened in 3d model viewer](./docs/6.jpg)
+
+# Bugs?
+
+If you find a bug while using the tool or just have a suggestion please create a new issue on github or tweet [@JamesFrowenDev](https://twitter.com/JamesFrowenDev) 

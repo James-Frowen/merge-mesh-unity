@@ -8,3 +8,32 @@ Add code from the source folder to Assets in unity.
 
 # How to use
 
+This tool editor tool has 2 uses: merge multiple mesh into 1 mesh and export mesh to .obj.
+
+## Merge mesh
+
+For this example I have created a room made out of multiple Quads. *(Note the order in the hierarchy is not important)*
+
+![Room made of multiple mesh](./docs/1.jpg)
+
+Add the `Mesh Filter` of the objects you want to merge. Using the `add to list` button will add all selected `Mesh Filter`.
+
+![Room made of multiple mesh](./docs/2.jpg)
+
+The `merge mesh` button will merge the mesh and open a window to save the mesh asset file for unity to use.
+ 
+![Room made of multiple mesh](./docs/3.jpg)
+
+After the mesh has been merged, an object using the new mesh will be added to the scene and all of the old objects will be disabled.
+
+![Room made of multiple mesh](./docs/4.jpg)
+
+## Export mesh
+
+To export the Mesh as an `.obj` file select the `GameObject` in the scene and press the export button. A window will open for the save location.
+
+![Room made of multiple mesh](./docs/5.jpg)
+
+Once the object has been exported it can be used by other 3d viewer and editors.
+
+![Room made of multiple mesh](./docs/6.jpg)

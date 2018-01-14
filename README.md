@@ -4,7 +4,7 @@ Custom editor window unity to merge and export mesh.
 
 # Install
 
-Add code from the source folder to Assets in unity.
+Copy code from the source folder to Assets folder in unity project.
 
 # How to use
 

@@ -83,7 +83,7 @@ namespace MergeMeshUnity
 
                 var filter = go.AddComponent<MeshFilter>();
                 var renderer = go.AddComponent<MeshRenderer>();
-                renderer.material = this.meshFilters[0].GetComponent<MeshRenderer>().material;
+                renderer.sharedMaterial = this.meshFilters[0].GetComponent<MeshRenderer>().sharedMaterial;
 
                 var mesh = new Mesh()
                 {

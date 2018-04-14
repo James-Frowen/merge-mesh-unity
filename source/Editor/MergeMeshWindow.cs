@@ -19,6 +19,7 @@ namespace MergeMeshUnity
         {
             this.listField();
             this.addSelectedToList();
+            this.clearList();
             this.mergeMesh();
             this.exportToFile();
         }
@@ -52,6 +53,14 @@ namespace MergeMeshUnity
                         this.meshFilters.Add(filter);
                     }
                 }
+            }
+        }
+
+        private void clearList()
+        {
+            if (GUILayout.Button("clear list"))
+            {
+                this.meshFilters.Clear();
             }
         }
 
@@ -116,7 +125,7 @@ namespace MergeMeshUnity
         public static void ShowWindow()
         {
             var window = (MergeMeshWindow)GetWindow(typeof(MergeMeshWindow));
-            window.minSize = new Vector2(50, 230);
+            window.minSize = new Vector2(50, 250);
             window.Show();
         }
     }

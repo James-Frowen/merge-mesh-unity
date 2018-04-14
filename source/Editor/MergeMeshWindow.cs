@@ -69,11 +69,16 @@ namespace MergeMeshUnity
             if (GUILayout.Button("merge mesh"))
             {
                 var combine = new CombineInstance[this.meshFilters.Count];
+                bool hasCollider = false;
                 for (int i = 0; i < this.meshFilters.Count; i++)
                 {
                     combine[i].mesh = this.meshFilters[i].sharedMesh;
                     combine[i].transform = this.meshFilters[i].transform.localToWorldMatrix;
                     this.meshFilters[i].gameObject.SetActive(false);
+                    if (this.meshFilters[i].GetComponent<MeshCollider>())
+                    {
+                        hasCollider = true;
+                    }
                 }
                 var name = this.meshFilters[0].name.Split(' ')[0];
                 var go = new GameObject("mesh_" + name)
@@ -84,7 +89,7 @@ namespace MergeMeshUnity
                 var filter = go.AddComponent<MeshFilter>();
                 var renderer = go.AddComponent<MeshRenderer>();
                 renderer.sharedMaterial = this.meshFilters[0].GetComponent<MeshRenderer>().sharedMaterial;
-
+                
                 var mesh = new Mesh()
                 {
                     name = "test mesh"
@@ -92,6 +97,12 @@ namespace MergeMeshUnity
                 filter.sharedMesh = mesh;
 
                 mesh.CombineMeshes(combine);
+
+                if (hasCollider)
+                {
+                    var collider = go.AddComponent<MeshCollider>();
+                    collider.sharedMesh = mesh;
+                }
 
                 string fileName = EditorUtility.SaveFilePanelInProject("Export mesh file", "mesh_" + name, "asset", "");
                 AssetDatabase.CreateAsset(filter.sharedMesh, fileName);

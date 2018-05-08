@@ -69,6 +69,7 @@ namespace MergeMeshUnity
             if (GUILayout.Button("export"))
             {
                 ObjExporterScript.DoExport(true);
+                AssetDatabase.Refresh();
             }
         }
 
@@ -116,6 +117,7 @@ namespace MergeMeshUnity
                 string fileName = EditorUtility.SaveFilePanelInProject("Export mesh file", "mesh_" + name, "asset", "");
                 AssetDatabase.CreateAsset(filter.sharedMesh, fileName);
                 AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
 
                 Selection.activeGameObject = go;
             }

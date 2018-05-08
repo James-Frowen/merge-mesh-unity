@@ -1,0 +1,8 @@
+{
+    "name": "merge-mesh-unity.Editor",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

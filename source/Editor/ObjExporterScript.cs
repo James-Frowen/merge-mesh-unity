@@ -36,7 +36,7 @@ namespace MergeMeshUnity
                 return "####Error####";
             }
             var renderer = meshFilter.GetComponent<MeshRenderer>();
-            Material[] mats = renderer.materials;
+            Material[] mats = renderer.sharedMaterials;
 
             StringBuilder sb = new StringBuilder();
 
